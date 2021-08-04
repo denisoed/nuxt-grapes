@@ -16,6 +16,8 @@ export default {
     ]
   },
 
+  serverMiddleware: [{ path: '/', handler: '~/server/index.js' }],
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/css/index.css'

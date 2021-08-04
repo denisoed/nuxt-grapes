@@ -8,7 +8,7 @@ const defaultOptions = {
 
 export default ({ app }, inject) => { // eslint-disable-line
   inject('grapes', (options) => {
-    grapes.init({
+    return grapes.init({
       ...defaultOptions,
       ...options,
     });
