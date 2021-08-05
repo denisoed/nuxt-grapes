@@ -24,7 +24,8 @@ export default {
       run: async () => {
         const html = await editor.getHtml();
         const css = await editor.getCss();
-        await this.$axios.$post('/api/save', {
+        await this.$axios.$put('/api/save', {
+          pageId: this.$route.params.id,
           html,
           css,
         });
