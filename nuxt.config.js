@@ -1,3 +1,4 @@
+import axios from 'axios'
 require('dotenv').config()
 
 export default {
@@ -30,6 +31,16 @@ export default {
     { src: '~/plugins/grapes.js', mode: 'client' },
   ],
 
+  generate: {
+    routes: () => {
+      return axios.get('http://localhost:3000/api/get-pages/')
+      .then((res) => {
+        console.log('!!!!!!');
+        return res.data.map(page => `/pages/${page._id}`)
+      })
+    }
+  },
+
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
@@ -43,6 +54,10 @@ export default {
   modules: [
     '@nuxtjs/axios'
   ],
+
+  axios: {
+    baseURL: '/',
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

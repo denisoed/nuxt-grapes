@@ -19,6 +19,17 @@ router.get('/get-pages', (req, res) => {
   });
 })
 
+router.get('/get-page', (req, res) => {
+  const pageId = req.params.pageId;
+  Page.findOne({ id: pageId }, (error, page) => {
+    if (error) {
+      return res.status(500).send(error);
+    } else {
+      return res.json(page);
+    }
+  });
+})
+
 router.put('/save', (req, res) => {
   const pageId = req.params.pageId;
   Page.findOne({ id: pageId }, (error, page) => {
