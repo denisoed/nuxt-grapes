@@ -21,8 +21,13 @@ export default {
 
     // Add the command
     editor.Commands.add('save', {
-      run: () => {
-        console.log('/api/get-page');
+      run: async () => {
+        const html = await editor.getHtml();
+        const css = await editor.getCss();
+        await this.$axios.$post('/api/save', {
+          html,
+          css,
+        });
       }
     })
   },
