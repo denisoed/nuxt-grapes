@@ -22,7 +22,8 @@
     "grapesjs-blocks-bootstrap4": "^0.2.3",
     "grapesjs-preset-webpage": "^0.1.11",
     "mongoose": "^5.13.5",
-    "nuxt": "^2.15.7"
+    "nuxt": "^2.15.7",
+    "nuxt-custom-elements": "^1.7.2"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",

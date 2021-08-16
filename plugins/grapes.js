@@ -4,7 +4,7 @@ import 'grapesjs-preset-webpage';
 import 'grapesjs/dist/css/grapes.min.css';
 
 const defaultOptions = {
-  plugins: ['gjs-preset-webpage', 'grapesjs-blocks-bootstrap4'],
+  plugins: ['grapesjs-blocks-bootstrap4'],
   canvas: {
     styles: [
       'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'

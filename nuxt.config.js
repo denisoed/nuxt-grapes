@@ -16,6 +16,16 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      {
+        src: 'https://unpkg.com/vue',
+        body: true
+      },
+      {
+        src: 'http://localhost:3000/v-nuxt-logo.min.js',
+        body: true
+      }
     ]
   },
 
@@ -35,7 +45,6 @@ export default {
     routes: () => {
       return axios.get('http://localhost:3000/api/get-pages/')
       .then((res) => {
-        console.log('!!!!!!');
         return res.data.map(page => `/pages/${page._id}`)
       })
     }
